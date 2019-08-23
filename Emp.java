@@ -37,9 +37,10 @@ class Emp
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter the number of employees");
     int n = sc.nextInt();
-    EMPLOYEE E[] =  new EMPLOYEE[n];
+    EMPLOYEE[] E =  new EMPLOYEE[n];
     for(int i=0;i<n;i++)
     {
+      E[i] = new EMPLOYEE();
       E[i].read();
       E[i].cal();
       E[i].display();
