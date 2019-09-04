@@ -32,25 +32,33 @@ class average_total
             average = total/m;
             arr[++i][j] = average;
         }
-        System.out.println("Results");   
+        System.out.println("Results\n");
+        System.out.print("Student\t\t");
+        for(i = 0;i < m;i++)
+        {
+            System.out.print("Marks" + i + "\t");
+        }
+        System.out.print("Total\tAverage");
+        System.out.println("\n");
         for (i = 0 ; i < m ; i++)
         { 
-            for (j = 0 ; j < n ; j++){
-                System.out.println(arr[i][j]+"\t");  
+            System.out.print("Student " + (i+1)+"\t");
+            for (j = 0 ; j < n+2 ; j++){
+                System.out.print(arr[i][j]+"\t");  
             }
-            System.out.println(arr[i][j]+"\t");     
-            System.out.println(arr[i][++j]+"\t");  
+            System.out.println("\n");
         }
-        System.out.printf("Total");             
+        System.out.print("Total \t\t");             
         for (j = 0 ; j < n ; j++)
         {
-            System.out.println(arr[i][j]);      
+            System.out.print(arr[i][j]+"\t");      
         }
-        System.out.print("\n");
-        System.out.printf("Average");           
+        System.out.println("\n");
+        System.out.print("Average\t\t");           
         i++;         
         for (j = 0 ; j < n ; j++){
-            System.out.println(arr[i][j]);      
+            System.out.print(arr[i][j]+"\t");      
         }
+        System.out.println("\n");
     }
 }
