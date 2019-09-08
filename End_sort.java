@@ -1,42 +1,42 @@
 import java.util.*;
-public class End_sort
-{
-    public static void main(String args[])
-    {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number of elements in the list");
-        int n = sc.nextInt();
-        int[] a = new int[100];
+class Sort 
+{ 
+    void sorting(int arr[]) 
+    { 
+        int n = arr.length; 
         int count = 0;
-        int flag=1;
-        System.out.println("Enter the elements of the list");
-        for(int i = 0;i<n;i++)
-        {
-            a[i] = sc.nextInt();
-        }
-        int max = a[0];
-        int temp;
-        while(flag == 1)
-        {
-            for(int j = 1;j<n;j++)
+        for (int i = 0; i < n-1; i++) 
+        { 
+            int min = i; 
+            for (int j = i+1; j < n; j++)
             {
-                if(a[j]>max)
+                if (arr[j] < arr[min])
                 {
-                    max = a[j];
-                }
-                if(n==1)
-                {
-                    flag = 0;
-                    break;
+                    min = j;
+                    count++;
                 }
             }
-            temp = a[n-1];
-            a[n-1] = max;
-            max = temp;
-            n = n-1;
-            max = a[0];
-            count = count + 1;
-        }
-        System.out.println("Number of steps required for sorting is " + count);
+            int temp = arr[min]; 
+            arr[min] = arr[i]; 
+            arr[i] = temp; 
+        } 
+        System.out.println(count);
     }
+}
+class End_sort
+{
+    public static void main(String args[]) 
+    { 
+        Sort ob = new Sort();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of elements");
+        int n = sc.nextInt();
+        System.out.println("Enter the elements");
+        int arr[] = new int[n];
+        for(int i = 0;i<n;i++)
+        {
+            arr[i] = sc.nextInt();
+        } 
+        ob.sorting(arr);
+    } 
 }
