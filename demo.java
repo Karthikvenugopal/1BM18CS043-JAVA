@@ -1,5 +1,5 @@
 import java.util.*;
-class demo
+class PERSON
 {
    String name, address;
    int age;
@@ -17,7 +17,7 @@ class demo
       System.out.println("Name: " + name + "\nAge: " + age + "\nAddress: " + address);
    }
 }
-class STUDENT extends demo
+class STUDENT extends PERSON
 {
    int rollno, sem;
    void accept()
@@ -57,7 +57,7 @@ class EXAM extends STUDENT
       System.out.println("Average: " + avg);
    }
 }
-class person
+class demo
 {
    public static void main(String args[])
    {
