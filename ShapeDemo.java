@@ -42,20 +42,21 @@ class ShapeDemo
    public static void main(String args[])
    {
       Scanner sc = new Scanner(System.in);
+      Shape ref = null;
       System.out.println("Enter 1 for rectangle");
       System.out.println("Enter 2 for triangle");
       System.out.println("Enter 3 for circle");
       int c = sc.nextInt();
       switch(c)
       {
-         case 1: Rectangle r = new Rectangle();
-                 r.printArea();
+         case 1: ref = new Rectangle();
+                 ref.printArea();
                  break;
-         case 2: Triangle t = new Triangle();
-                 t.printArea();
+         case 2: ref = new Triangle();
+                 ref.printArea();
                  break;
-         case 3: Circle k = new Circle();
-                 k.printArea();
+         case 3: ref = new Circle();
+                 ref.printArea();
                  break;
       }
   }
