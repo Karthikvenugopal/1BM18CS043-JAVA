@@ -4,6 +4,7 @@ interface Stack
    void push();
    void pop();
    void display();
+   boolean isempty();
 }
 class StackTest implements Stack
 {
