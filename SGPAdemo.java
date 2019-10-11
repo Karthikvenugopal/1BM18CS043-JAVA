@@ -6,9 +6,11 @@ class Student
     void input()
     {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the usn, name, and semester of the student");
+        System.out.println("Enter the usn of the student");
         usn = sc.nextLine();
+        System.out.println("Enter the name of the student");
         name = sc.nextLine();
+        System.out.println("Enter the semester of the student");
         sem = sc.nextInt();
     }
     void output()
@@ -19,7 +21,7 @@ class Student
 class Test extends Student
 {
     int cmarks[] = new int[6];
-    static cre[] = {4,4,4,4,3,3};
+    static int cre[] = new Int[]{4,4,4,4,3,3};
     void input()
     {
         super.input();
@@ -97,15 +99,21 @@ class Result extends Exam
         int sum = 0;
         for(int i = 0; i<6;i++)
         {
+            if(grade(cmarks[i]+smarks[i]) == 0)
+            {
+                sgpa = 0;
+                break;
+            }
             sgpa += grade(cmarks[i]+smarks[i])*cre[i];
             sum = sum + cre[i];
         }
         sgpa /= sum;
+        return sgpa;
     }
     void output()
     {
         super.output();
-        System.out.println("SGPA of the student is: " + sgpa);
+        System.out.println("SGPA of the student is: " + calc());
     }
 }
 class SGPAdemo
@@ -115,10 +123,10 @@ class SGPAdemo
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of students");
         int n = sc.nextInt();
-        Student s[n];
+        Student s[] = new Student[n];
         for(int i = 0;i<n;i++)
         {
-            Student s[i] = new Result();
+            s[i] = new Result();
             s[i].input();
             s[i].output();
         }
